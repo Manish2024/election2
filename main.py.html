@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>main.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #6a8759;}
+.s2 { color: #6897bb;}
+.s3 { color: #cc7832;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.py</font>
+</center></td></tr></table>
+<pre><span class="s0">no1 = input(</span><span class="s1">&quot;Enter first nomineter's name :&quot;</span><span class="s0">)</span>
+<span class="s0">no2 = input(</span><span class="s1">&quot;Enter second nomineter's name :&quot;</span><span class="s0">)</span>
+<span class="s0">vote1 =</span><span class="s2">0</span>
+<span class="s0">vote2 =</span><span class="s2">0</span>
+<span class="s0">total_vote = int(input(</span><span class="s1">&quot;total numbers of voters :&quot;</span><span class="s0">))</span>
+<span class="s0">m = int(total_vote)</span>
+<span class="s0">voter_ID = []</span>
+<span class="s3">while </span><span class="s0">total_vote &gt;</span><span class="s2">0 </span><span class="s0">:</span>
+    <span class="s0">voter_ID.append(total_vote)</span>
+    <span class="s0">total_vote = total_vote -</span><span class="s2">1</span>
+<span class="s0">x =</span><span class="s2">0</span>
+<span class="s3">while True </span><span class="s0">:</span>
+    <span class="s3">if </span><span class="s0">len(voter_ID) &gt;</span><span class="s2">0 </span><span class="s0">:</span>
+        <span class="s0">voterid = int(input(</span><span class="s1">&quot;Enter your voter id :&quot;</span><span class="s0">))</span>
+        <span class="s3">if </span><span class="s0">voterid </span><span class="s3">in </span><span class="s0">voter_ID:</span>
+            <span class="s0">print(</span><span class="s1">&quot;You are applicable for voting..&quot;</span><span class="s0">)</span>
+            <span class="s0">print(</span><span class="s1">&quot;please wait....&quot;</span><span class="s0">)</span>
+            <span class="s0">voter_ID.remove(voterid)</span>
+            <span class="s0">vote = int(input(</span><span class="s1">&quot;Enter your nomineter code : &quot;</span><span class="s0">))</span>
+            <span class="s0">x =x +</span><span class="s2">1</span>
+            <span class="s3">if </span><span class="s0">vote == </span><span class="s2">1</span><span class="s0">:</span>
+                <span class="s0">vote1 = vote1 + </span><span class="s2">1</span>
+                <span class="s0">print(</span><span class="s1">&quot;Thanking you for voting :&quot;</span><span class="s3">, </span><span class="s0">no1)</span>
+            <span class="s3">elif </span><span class="s0">vote == </span><span class="s2">2</span><span class="s0">:</span>
+                <span class="s0">vote2 = vote2 + </span><span class="s2">1</span>
+                <span class="s0">print(</span><span class="s1">&quot;Thanking you for voting :&quot;</span><span class="s3">, </span><span class="s0">no2)</span>
+            <span class="s3">else</span><span class="s0">:</span>
+                <span class="s0">print(</span><span class="s1">&quot;Please Enter the code only show in the list at top&quot;</span><span class="s0">)</span>
+        <span class="s3">else</span><span class="s0">:</span>
+            <span class="s0">print(</span><span class="s1">&quot;You are not applicable for voting &quot;</span><span class="s0">)</span>
+            <span class="s0">print(</span><span class="s1">&quot;Check your voter ID or you have already voted.&quot;</span><span class="s0">)</span>
+    <span class="s3">else </span><span class="s0">:</span>
+        <span class="s3">break</span>
+<span class="s0">print(</span><span class="s1">&quot;Result is here :&quot;</span><span class="s0">)</span>
+<span class="s3">if </span><span class="s0">vote1 &gt; vote2 :</span>
+    <span class="s0">print(</span><span class="s1">&quot;congratulation wineer is &quot;</span><span class="s3">, </span><span class="s0">no1)</span>
+    <span class="s0">print(no1</span><span class="s3">,</span><span class="s1">&quot;won by &quot;</span><span class="s3">,</span><span class="s0">int(vote1) - int(vote2)</span><span class="s3">,</span><span class="s1">&quot;votes&quot;</span><span class="s0">)</span>
+<span class="s3">elif </span><span class="s0">vote1 == vote2 :</span>
+    <span class="s0">print(</span><span class="s1">&quot;their are same votes for nomineters &quot;</span><span class="s0">)</span>
+<span class="s3">elif </span><span class="s0">vote1 &lt; vote2 :</span>
+    <span class="s0">print(</span><span class="s1">&quot;congratulation wineer is &quot;</span><span class="s3">, </span><span class="s0">no2)</span>
+    <span class="s0">print(no2</span><span class="s3">, </span><span class="s1">&quot;won by &quot;</span><span class="s3">, </span><span class="s0">int(vote2) - int(vote1)</span><span class="s3">, </span><span class="s1">&quot;votes&quot;</span><span class="s0">)</span>
+<span class="s0">print(</span><span class="s1">&quot;total vote gived :&quot;</span><span class="s3">, </span><span class="s0">x)</span>
+<span class="s0">print(</span><span class="s1">&quot;thanks for voting ..&quot;</span><span class="s0">)</span>
+<span class="s0">print(</span><span class="s1">&quot;best of luck for new prdhan.&quot;</span><span class="s0">)</span></pre>
+</body>
+</html>
